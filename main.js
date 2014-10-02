@@ -20,8 +20,14 @@ var mainState = {
         // This function is called after the preload function     
         // Here we set up the game, display sprites, etc.  
         
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        
         // creating a variable that belongs to the game class, it's a simple name
         this.ram = this.game.add.sprite((game.length/2-4),(game.height/2-10),'ram');
+        
+        game.physics.arcade.enable(this.ram);
+        
+        this.ram.body.gravity.y = 1000;
         
     },
 
