@@ -7,7 +7,9 @@ var mainState = {
     preload: function() { 
         // This function will be executed at the beginning     
         // That's where we load the game's assets  
-        game.stage.backgroundColor = '#222222'
+        game.stage.backgroundColor = '#222222';
+        
+        game.load.image('ram', 'assets/ram.png');
     },
 
     create: function() { 
