@@ -8,7 +8,6 @@ var mainState = {
         // This function will be executed at the beginning     
         // That's where we load the game's assets 
         
-        game.stage.backgroundColor = '#00dddd';
     },
 
     create: function() { 
