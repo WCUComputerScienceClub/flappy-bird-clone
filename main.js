@@ -6,17 +6,22 @@ var mainState = {
 
     preload: function() { 
         // This function will be executed at the beginning     
-        // That's where we load the game's assets  
+        // That's where we load the game's assets
+        game.stage.backgroundColor = '#71cfff';
+        
+        game.load.image('ram','assets/ram.png');
     },
 
     create: function() { 
         // This function is called after the preload function     
-        // Here we set up the game, display sprites, etc.  
+        // Here we set up the game, display sprites, etc.
+        this.ram=this.game.add.sprite(100,100,'ram');
     },
 
     update: function() {
         // This function is called 60 times per second    
-        // It contains the game's logic   
+        // It contains the game's logic
+        
     },
 };
 
