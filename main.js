@@ -21,7 +21,7 @@ var mainState = {
         // Here we set up the game, display sprites, etc.  
         
         // creating a variable that belongs to the game class, it's a simple name
-        this.ram = this.game.add.sprite((game.width/2-4),(game.length/2-10),'ram');
+        this.ram = this.game.add.sprite((game.length/2-4),(game.height/2-10),'ram');
         
     },
 
