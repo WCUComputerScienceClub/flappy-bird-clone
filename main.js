@@ -1,7 +1,10 @@
 // Initialize Phaser, and create a 400x490px game
 var game = new Phaser.Game(400, 490, Phaser.AUTO, 'gameDiv');
 
+// universal variable for movement speed
 var s = 100;
+// universal variable for gravity
+var gravLevel = 750;
 
 // Create our 'main' state that will contain the game
 var mainState = {
@@ -29,7 +32,6 @@ var mainState = {
         game.physics.arcade.enable(this.ram);
         
         // pulls the ram down
-        var gravLevel = 750;
         this.ram.body.gravity.y = gravLevel;
         
         // adds a function to space bar
@@ -51,7 +53,7 @@ var mainState = {
 
     jump: function() {
         // allows you to jump using the key indicated in the create method
-        this.ram.body.velocity.y = -4*s;
+        this.ram.body.velocity.y = -3*s;
     },
     
     right: function(){
@@ -67,6 +69,8 @@ var mainState = {
     update: function() {
         // This function is called 60 times per second    
         // It contains the game's logic   
+        s = s+1;
+        gravLevel = gravLevel+1;
     },
 };
 
