@@ -38,8 +38,6 @@ var mainState = {
         var moveRight = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
         var moveLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
         
-        var speed = 100;
-        
         // we'll need a jump method for this one
         spaceKey.onDown.add(this.jump, this);
         moveUp.onDown.add(this.jump, this);
@@ -48,6 +46,8 @@ var mainState = {
         moveRight.onDown.add(this.right, this);
         moveLeft.onDown.add(this.left, this);
     },
+
+var speed = 100;
 
     jump: function() {
         // allows you to jump using the key indicated in the create method
