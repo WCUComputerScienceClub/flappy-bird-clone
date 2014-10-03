@@ -1,6 +1,8 @@
 // Initialize Phaser, and create a 400x490px game
 var game = new Phaser.Game(400, 490, Phaser.AUTO, 'gameDiv');
 
+var s = 100;
+
 // Create our 'main' state that will contain the game
 var mainState = {
 
@@ -21,7 +23,7 @@ var mainState = {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         // creating a variable that belongs to the game class, it's a simple name
-        this.ram = this.game.add.sprite((game.width/2-4),(game.height/2-10),'ram');
+        this.ram = this.game.add.sprite((game.width/2-4),0,'ram');
         
         // phaser physics are applied to the ram
         game.physics.arcade.enable(this.ram);
@@ -38,30 +40,28 @@ var mainState = {
         var moveRight = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
         var moveLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
         
-        var spd = 100;
-
         // we'll need a jump method for this one
-        spaceKey.onDown.add(this.jump(spd), this);
-        moveUp.onDown.add(this.jump(spd), this);
+        spaceKey.onDown.add(this.jump, this);
+        moveUp.onDown.add(this.jump, this);
         
         // call methods for left and right movement
-        moveRight.onDown.add(this.right(spd), this);
-        moveLeft.onDown.add(this.left(spd), this);
+        moveRight.onDown.add(this.right, this);
+        moveLeft.onDown.add(this.left, this);
     },
 
-    jump: function(spd) {
+    jump: function() {
         // allows you to jump using the key indicated in the create method
-        this.ram.body.velocity.y = -4*(spd);
+        this.ram.body.velocity.y = -4*s;
     },
     
-    right: function(spd){
+    right: function(){
         // method for moving right (+x direction)
-        this.ram.body.velocity.x = 1*(spd);
+        this.ram.body.velocity.x = 1*s;
     },
     
-    left: function(spd){
+    left: function(){
         // method for moving left (-x direction)
-        this.ram.body.velocity.x = -1*(spd);
+        this.ram.body.velocity.x = -1*s;
     },
 
     update: function() {
