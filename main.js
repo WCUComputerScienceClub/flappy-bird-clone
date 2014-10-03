@@ -43,7 +43,7 @@ var mainState = {
         
         // allows you to jump using the key indicated in the create method
         this.ram.body.velocity.y = -300;
-    }
+    },
 
     update: function() {
         // This function is called 60 times per second    
