@@ -39,7 +39,6 @@ var mainState = {
     jump: function() {
             this.ram.body.velocity.y= -300;    
         
-        }
     }
     
     
