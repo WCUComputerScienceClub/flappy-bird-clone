@@ -27,7 +27,8 @@ var mainState = {
         game.physics.arcade.enable(this.ram);
         
         // pulls the ram down
-        this.ram.body.gravity.y = 750;
+        var gravLevel = 750;
+        this.ram.body.gravity.y = gravLevel;
         
         // adds a function to space bar
         var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -36,6 +37,8 @@ var mainState = {
         var moveUp = this.game.input.keyboard.addKey(Phaser.Keyboard.W)
         var moveRight = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
         var moveLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+        
+        var speed = 100;
         
         // we'll need a jump method for this one
         spaceKey.onDown.add(this.jump, this);
@@ -48,17 +51,17 @@ var mainState = {
 
     jump: function() {
         // allows you to jump using the key indicated in the create method
-        this.ram.body.velocity.y = -300;
+        this.ram.body.velocity.y = -1*(speed);
     },
     
     right: function(){
         // method for moving right (+x direction)
-        this.ram.body.velocity.x = 100;
+        this.ram.body.velocity.x = (speed);
     },
     
     left: function(){
         // method for moving left (-x direction)
-        this.ram.body.velocity.x = -100;
+        this.ram.body.velocity.x = -1*(speed);
     },
 
     update: function() {
