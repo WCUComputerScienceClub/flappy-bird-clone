@@ -23,11 +23,11 @@ var mainState = {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
         // creating a variable that belongs to the game class, it's a simple name
-        this.ram = this.game.add.sprite((game.length/2-4),(game.height/2-10),'ram');
+        this.ram = this.game.add.sprite((game.width/2-4),(game.height/2-10),'ram');
         
         game.physics.arcade.enable(this.ram);
         
-        this.ram.body.gravity.y = 1000;
+        this.ram.body.gravity.y = 750;
         
     },
 
