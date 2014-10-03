@@ -25,11 +25,25 @@ var mainState = {
         // creating a variable that belongs to the game class, it's a simple name
         this.ram = this.game.add.sprite((game.width/2-4),(game.height/2-10),'ram');
         
+        // phaser physics are applied to the ram
         game.physics.arcade.enable(this.ram);
         
+        // pulls the ram down
         this.ram.body.gravity.y = 750;
         
+        // adds a function to space bar
+        var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+        
+        // we'll need a jump method for this one
+        spaceKey.onDown(this.jump, this);
+        
     },
+
+    jump: function() {
+        
+        // allows you to jump using the key indicated in the create method
+        this.ram.body.velocity.y = -300;
+    }
 
     update: function() {
         // This function is called 60 times per second    
