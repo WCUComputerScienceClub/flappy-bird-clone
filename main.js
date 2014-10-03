@@ -53,7 +53,7 @@ var mainState = {
 
     jump: function() {
         // allows you to jump using the key indicated in the create method
-        this.ram.body.velocity.y = -2*s;
+        this.ram.body.velocity.y = -1*s;
     },
     
     right: function(){
@@ -70,7 +70,7 @@ var mainState = {
         // This function is called 60 times per second    
         // It contains the game's logic   
         s = s+1;
-        gravLevel = gravLevel+3;
+        gravLevel = gravLevel+10;
     },
 };
 
