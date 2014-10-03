@@ -38,30 +38,30 @@ var mainState = {
         var moveRight = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
         var moveLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
         
-        var speed = 100;
+        var spd = 100;
 
         // we'll need a jump method for this one
-        spaceKey.onDown.add(this.jump(speed), this);
-        moveUp.onDown.add(this.jump(speed), this);
+        spaceKey.onDown.add(this.jump(spd), this);
+        moveUp.onDown.add(this.jump(spd), this);
         
         // call methods for left and right movement
-        moveRight.onDown.add(this.right(speed), this);
-        moveLeft.onDown.add(this.left(speed), this);
+        moveRight.onDown.add(this.right(spd), this);
+        moveLeft.onDown.add(this.left(spd), this);
     },
 
-    jump: function(speed) {
+    jump: function(spd) {
         // allows you to jump using the key indicated in the create method
-        this.ram.body.velocity.y = -4*(speed);
+        this.ram.body.velocity.y = -4*(spd);
     },
     
-    right: function(speed){
+    right: function(spd){
         // method for moving right (+x direction)
-        this.ram.body.velocity.x = 1*(speed);
+        this.ram.body.velocity.x = 1*(spd);
     },
     
-    left: function(speed){
+    left: function(spd){
         // method for moving left (-x direction)
-        this.ram.body.velocity.x = -1*(speed);
+        this.ram.body.velocity.x = -1*(spd);
     },
 
     update: function() {
