@@ -35,7 +35,7 @@ var mainState = {
         var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         
         // we'll need a jump method for this one
-        spaceKey.onDown(this.jump, this);
+        spaceKey.onDown.add(this.jump, this);
         
     },
 
