@@ -34,15 +34,31 @@ var mainState = {
         // adds a function to space bar
         var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         
+        var moveRight = this.game.input.keyboard.addKey(Phaser.Keyboard.D);
+        var moveLeft = this.game.input.keyboard.addKey(Phaser.Keyboard.A);
+        
+        
         // we'll need a jump method for this one
         spaceKey.onDown.add(this.jump, this);
         
+        moveRight.onDown.add(this.pump, this);
+        moveLeft.onDown.add(this.rump, this);
     },
 
     jump: function() {
         
         // allows you to jump using the key indicated in the create method
         this.ram.body.velocity.y = -300;
+    },
+    
+    pump: function(){
+        
+        this.ram.body.velocity.x = 50;
+    },
+    
+    rump: function(){
+        
+        this.ram.body.velocity.x = -50;
     },
 
     update: function() {
