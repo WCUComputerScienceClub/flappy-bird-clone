@@ -9,7 +9,7 @@ var mainState = {
         // That's where we load the game's assets 
 
 		// Change the background Color
-		game.stage.backgroundColor = '#71c5cf';
+		game.stage.backgroundColor = ‘#ff0000’;
 		
 		// Add an image
 		game.load.image('ram','assets/ram.png');
