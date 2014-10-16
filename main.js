@@ -13,6 +13,7 @@ var mainState = {
         
         //add an image
         game.load.image('ram', 'assets/ram.png');
+		game.load.image('pipe', 'assets/pipe.png');
     },
 
     create: function() { 
@@ -27,6 +28,10 @@ var mainState = {
 		game.physics.arcade.enable(this.ram);
 		
 		this.ram.body.gravity.y = 1000;
+		
+		this.pipes = game.add.group();
+		this.pipes.enableBody = true;
+		this.pipes.createMultiple(20, pipe);
 		
 		var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 		
