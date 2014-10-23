@@ -29,7 +29,7 @@ var mainState = {
         
     },
     jump: function() {
-            this.ram.body.velocity.y = -300;
+            this.ram.body.velocity.y = -350;
     }
 };
 
