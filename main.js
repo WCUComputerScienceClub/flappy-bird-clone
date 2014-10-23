@@ -31,12 +31,36 @@ var mainState = {
 		
 		this.pipes = game.add.group();
 		this.pipes.enableBody = true;
-		this.pipes.createMultiple(20, pipe);
+		this.pipes.createMultiple(20, 'pipe');
+		
+		this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
 		
 		var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
 		
 		spaceKey.onDown.add(this.jump, this);
+		
+		
     },
+	
+	addOnePipe: function(x,y){
+		var pipe= this.pipes.getFirstDead();
+		
+		pipe.reset(x,y);
+		
+		pipe.body.velocity.x = -200;
+		
+		pipe.checkWorldBounds = true;
+		pipe.checkWorldBounds = true;
+	},
+	
+	addRowofPipes: function(){
+		var hole = math.floor(math.random()*5) +1;
+		
+		for(var i=0;i<8;i++){
+			if(i != hole && i != hole +1)
+				this.addOnePipe(400, i*60+10);
+		}
+	},
 
     update: function() {
         // This function is called 60 times per second    
