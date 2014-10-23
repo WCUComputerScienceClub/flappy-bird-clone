@@ -25,7 +25,7 @@ var mainState = {
         game.physics.arcade.enable(this.ram);
         
         // Add gravity to the ram so it falls
-        this.ram.body.gravity.y = 1000;
+        this.ram.body.gravity.y = 500;
         
         var spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         
